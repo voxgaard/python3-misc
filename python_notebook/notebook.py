@@ -95,3 +95,11 @@ class Notebook:
         string.'''
 
         return [note for note in self.notes if note.match(filter)]
+
+n1 = Note("hello first")
+n2 = Note("hello again")
+
+print(n1.id)
+print(n2.id)
+print(n1.match('hello'))
+print(n2.match('Xerxes'))
