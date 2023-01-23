@@ -95,7 +95,7 @@ class Notebook:
         string.'''
 
         return [note for note in self.notes if note.match(filter)]
-
+"""
 n1 = Note("hello first")
 n2 = Note("hello again")
 
@@ -103,3 +103,15 @@ print(n1.id)
 print(n2.id)
 print(n1.match('hello'))
 print(n2.match('Xerxes'))
+"""
+n = Notebook()
+n.new_note("hello world")
+n.new_note("hello again")
+print(n.notes)
+print(n.notes[0].id)
+print(n.notes[1].id)
+print(n.notes[0].memo)
+print(n.search("hello"))
+print(n.search("world"))
+n.modify_memo(1, "hi world")
+print(n.notes[0].memo)
