@@ -1,5 +1,5 @@
 import math
-
+#defining a class
 class Point:
 
     def __init__(self, x=0, y=0):
@@ -48,3 +48,33 @@ print(point1.calculate_distance(point1))
 
 point = Point(3, 5)
 print(point.x, point.y)
+
+#defining a class within a function
+
+def format_string(string, formatter=None):
+
+    '''Format a string using the formatter object, which
+
+    is expected to have a format() method that accepts
+
+    a string.'''
+
+    class DefaultFormatter:
+
+        '''Format a string in title case.'''
+
+        def format(self, string):
+
+            return str(string).title()
+
+    if not formatter:
+
+        formatter = DefaultFormatter()
+
+    return formatter.format(string)
+
+hello_string = "hello world, how are you today?"
+
+print(" input: " + hello_string)
+
+print("output: " + format_string(hello_string))
