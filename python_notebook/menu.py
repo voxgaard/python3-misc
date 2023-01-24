@@ -43,4 +43,27 @@ class Menu:
                 note.id, note.tags, note.memo))
 
     def search_notes(self):
-        
+        filter = input("Search for: ")
+        notes = self.notebook.search(filter)
+        self.show_notes(notes)
+
+    def add_note(self):
+        memo = input("Enter a memo: ")
+        self.notebook.new_note(memo)
+        print("Your note has been added.")
+
+    def modify_note(self):
+        id = input("Enter a note ID: ")
+        memo = input("Enter tags: ")
+        tags = input("Enter tags: ")
+        if memo:
+            self.notebook.modify_memo(id, memo)
+        if tags:
+            self.notebook.modify_tags(id, tags)
+
+    def flee(self):
+        print("Begone, mortal. You cannot fathom the power of the notes contain wherein.")
+        sys.exit(0)
+
+if __name__ == "__main__":
+    Menu().run()
