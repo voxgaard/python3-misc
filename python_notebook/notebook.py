@@ -66,7 +66,15 @@ class Notebook:
 
         memo to the given value.'''
 
-        self._find_note(note_id).memo = memo
+        note = self._find_note(note_id)
+        
+        if note:
+
+            note.memo = memo
+
+            return True
+
+        return False
 
     def modify_tags(self, note_id, tags):
 
@@ -74,13 +82,15 @@ class Notebook:
 
         tags to the given value.'''
 
-        for note in self.notes:
+        note = self._find_note(note_id)
+        
+        if note:
 
-            if note.id == note_id:
+            note.tags = tags
 
-                note.tags = tags
+            return True
 
-            break
+        return False
 
     def search(self, filter):
 
@@ -96,7 +106,7 @@ class Notebook:
 
         for note in self.notes:
 
-            if note.id == note_id:
+            if str(note.id) == str(note_id):
 
                 return note
 
