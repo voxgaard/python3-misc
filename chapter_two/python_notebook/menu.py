@@ -62,7 +62,7 @@ class Menu:
             self.notebook.modify_tags(id, tags)
 
     def flee(self):
-        print("Begone, mortal. You cannot fathom the power of the notes contain wherein.")
+        print("Begone, mortal. You cannot fathom the power of the notes contained wherein.")
         sys.exit(0)
 
 if __name__ == "__main__":
